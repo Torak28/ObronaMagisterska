@@ -1,0 +1,33 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in, paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\usepackage{indentfirst}
+
+\usepackage{rotating}
+\usepackage[hidelinks]{hyperref}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tabularx}
+\usepackage{listings}
+
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\makeatletter
+
+\newenvironment{titlemize}[1]{%
+	\paragraph{#1}
+	\begin{itemize}}
+	{\end{itemize}}
+
+\setcounter{tocdepth}{1}
