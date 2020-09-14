@@ -1,6 +1,6 @@
 # Zawartość
 
-![alt](https://media.giphy.com/media/5wWf7H89PisM6An8UAU/giphy.gif)
+![alt](https://i.giphy.com/media/5wWf7H89PisM6An8UAU/giphy.webp)
 
 Opracowanie pytań na egzamin Magisterski na Politechnice Wrocławskiej na Wydziale Elektroniki, kierunku Informatyka i specjalności Grafika i systemy multimedialne(IGM).
 
