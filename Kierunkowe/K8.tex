@@ -1,1 +1,44 @@
 \subsection{Weryfikacja modelowa z zastosowaniem logiki temporalnej}
+
+Logika temporalna jest to rozszerzenie logiki tradycyjnej o symbole określające upływ czasu. Weryfikacja modelowa pozwala odpowiedzieć na pytanie czy formalny model funkcji systemu dany jako automat spełnia własności, zdefiniowane za pomocą formuł logiki temporalnej. Główne zastosowania to:
+
+\begin{itemize}
+	\item zarządzanie temporalnymi bazami danych,
+	\item opis systemów współbieżnych,
+	\item opis systemów reagujących na bodźce,
+	\item określanie własności systemów,
+	\item automatyczna weryfikacja programów – matematyczne udowodnienie ich poprawności.
+\end{itemize}
+
+Najważniejsze zadania weryfikacji:
+
+\begin{itemize}
+	\item osiągalność (pożądany stan zostanie \textbf{w końcu} osiągnięty)
+	\item bezpieczeństwo (gwarancja, iż stan nieprawidłowy \textbf{nigdy} nie zostanie osiągnięty)
+\end{itemize}
+
+\subsubsection{Typy logiki temporalnej}
+
+Wyróżniamy 3 typy logiki temporalnej:
+
+\begin{itemize}
+	\item \textbf{LTL} (\textit{Linear Temporal Logic}) – z liniową strukturą czasu,
+	\item \textbf{CTL} (\textit{Computation Tree Logic}) – rozszerzenie logiki LTL o rozgałęzione warianty upływu czasu). Czas jest dyskretny, może się rozgałęziać (ale od pewnego momentu, wcześniej jest liniowy) oraz lewostronnie skończony (w przyszłości nieskończony). Zastosowanie : w działających współbieżnie programach , w systemach gdzie istnieje wiele wariantów upływu czasu,
+	\item \textbf{Real Time CTL} - dalsze rozwiniecie logiki temporalnej, pozwala na weryfikacje systemów czasu rzeczywistego, gdzie dana operacja nie tylko musi być wykonana, ale też są na nią ograniczone ramy czasowe.
+\end{itemize}
+
+\subsubsection{Zalety i wady}
+
+Zalety:
+
+\begin{itemize}
+	\item pełna automatyzacja (po utworzeniu wymagań i zdefiniowaniu ograniczeń wystarczy uruchomić weryfikację),
+	\item łatwe dowodzenie nieprawidłowości przez znalezienie kontrprzykładu.
+\end{itemize}
+
+Wady
+
+\begin{itemize}
+	\item złożoność obliczeniowa;eksplozja stanów,
+	\item wykonanie abstrakcji wymaga pracy eksperta.
+\end{itemize}
