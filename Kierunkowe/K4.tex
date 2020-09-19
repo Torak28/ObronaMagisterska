@@ -1,1 +1,41 @@
 \subsection{Zadania komputerowego przetwarzania biosygnałów na wybranym przykładzie (np. EKG, EMG)}
+
+Zależnie od źródła pochodzenia, wyróżnić można kilka rodzajów sygnałów biomedycznych:
+
+\begin{itemize}
+	\item \textbf{Mechaniczne} - Np. ciśnienie krwi, ruchy wykonywane przez organy lub części ciała, sygnały dźwiękowe (przykładowo szmery w układzie oddechowym),
+	\item \textbf{Chemiczne} - Np. współczynnik PH płynów ustrojowych, zawartość określonej substancji składowej,
+	\item \textbf{Termiczne} - Np. ciepło emitowane przez poszczególne części ciała,
+	\item \textbf{Elektryczne} - Np. EKG, EMG (pochodzące z serca), EEG (pochodzące z układu nerwowego),
+	\item \textbf{Magnetyczne} - Powiązane z sygnałami elektrycznymi, ale rzadko wykorzystywane ze względu na trudność ich rejestracji i identyfikacji.
+\end{itemize}
+
+Zależnie od stochastyki, podzielić je można natomiast na dwie podgrupy:
+
+\begin{itemize}
+	\item \textbf{Stacjonarne} - Statystyczne parametry tych sygnałów nie ulegają zmianie. Przykładowo: norma zawartości żelaza we krwi określana jest odgórnie zależnie od wymiarów organizmu, więc wartość oczekiwana tego parametru nie ulega zmianie w czasie,
+	\item \textbf{Niestacjonarne} - Statystyczne parametry tych sygnałów mogą ulec zmianie w czasie. Przykładowo: wariancja wyznaczana na sygnale EKG lub EEG.
+\end{itemize}
+
+Do najpopularniejszych metody wykorzystywanych w procesie przetwarzania takich sygnałów należą:
+
+\begin{itemize}
+	\item \textbf{Filtracja} – Usuwanie lub redukcja pewnych elementów sygnału,
+	\item \textbf{Analiza} – Ekstrakcja poszukiwanych cech z sygnału, zazwyczaj poprzez jego segmentację lub parametryzację, pozwalając na konwersję sygnału do postaci wektora cech, który poddany zostać może dalszej analizie,
+	\item \textbf{Interpretacja} - Porównanie otrzymanego pomiaru z oczekiwanym wzorcem, wyszukiwanie w nim anomalii lub charakterystycznych elementów.
+\end{itemize}
+
+\subsubsection{Przykładowa analiza sygnału EKG}
+
+Sygnał EKG jest napięciem elektrycznym rejestrowanym na ciele poprzez odpowiednio połączone elektrody. Pozwala on zdiagnozować liczne problemy powodowane przez choroby serca, lub zaburzenia jego pracy. Jest on jednym z najczęściej wykorzystywanych i najlepiej zbadanych sygnałów wykorzystywanych w diagnostyce medycznej. Analiza tego sygnału przeprowadzana jest w trzech etapach:
+
+\begin{itemize}
+	\item \textbf{Filtracja} - Usuwa określone pasma z pomiaru:
+	\begin{itemize}
+		\item \textbf{Filtr górnoprzepustowy} - Usuwania dryft linii izoelektrycznej (0.2Hz – 0.5Hz),
+		\item \textbf{Filtr szczelinowy} - Usuwa zakłócenia sieci elektroenergetycznej (50Hz),
+		\item \textbf{Filtry dolnoprzepustowe} - Usuwają zakłócenia pochodzące z drżeń mięśniowych, aparatury elektromedycznej, oraz artefakty pomiaru (25Hz, 35Hz).
+	\end{itemize}
+	\item \textbf{Analiza} - Wyznacza charakterysytyczne punkty sygnału (początek i koniec P, QRS, koniec T, lokalizacja Q, R, S, J, amplitudy P, Q, R, S, T, nachylenie S-T) oraz parametry zespołu uśrednionego (uśrednione wartości tych samych charakterystyk dla kilku różnych sygnałów EKG),
+	\item \textbf{Interpretacja} - Porównanie cech otrzymanego sygnału (np. odstęp PQ, czas trwania zespołu QRS, amplituda załamka Q, nachylenie odcinka ST) z kryteriami medycznymi dla rożnych zaburzeń (np. blok przedsionkowo-komorowy, rytm nadkomorowy, przerost lewej komory, itp.).
+\end{itemize}
