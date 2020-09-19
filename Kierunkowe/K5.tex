@@ -1,1 +1,30 @@
 \subsection{Metody i narzędzia wykorzystywane w opisywaniu procesów biznesowych}
+
+W zagadnieniach związanych z opisywaniem procesów biznesowych, wykorzystywane są różne rodzaje podstawowych procesów zarządzania, określone w \textit{Podnoszenie efektywności organizacji}:
+
+\begin{itemize}
+	\item \textbf{Ogólne procesy podstawowe} (np. zakładanie nowego biznesu, przygotowanie i wprowadzenie nowego produktu, produkcja, obsługa pogwarancyjna),
+	\item \textbf{Procesy podstawowe specyficzne dla branży} (np. załatwianie wniosku kredytowego, rozpatrzenie wniosku o odszkodowanie, stworzenie programu),
+	\item \textbf{Ogólne procesy wspierające} (np. formalne planowanie strategiczne i taktyczne, budżetowanie, rekrutacja, szkolenie),
+	\item \textbf{Ogólne procesy zarządzania} (np. planowanie strategiczne i taktyczne, ustalanie celów, alokacja zasobów).
+\end{itemize}
+
+W zależności od specyfiki organizacji i branży, wybrać można różne technologie pozwalające na zarządzanie procesami biznesowymi.
+
+\subsubsection{BPMN - Business Process Modelling Notation}
+
+Graficzny język wizualizacji, specyfikowania, tworzenia i dokumentowania procesów biznesowych. Służy do opisu procesów na potrzeby systemów ERP (zarządzanie zasobami w przedsiębiorstwach) oraz WorkFlow (obieg pracy, dokumentów). Celem BPMN jest wymiana procesów biznesowych na poziomie ludzi zamiast poziomu technicznego. Wspiera proste i złożone procesy, oraz prostą wymianę komunikacji między użytkownikami - podstawą są diagramy procesów biznesowych. BPMN tworzy most między notacją pojęciową i techniczną - przekształca pomysł na kod (np. język BPL). Proces biznesowy w BPMN to zaplanowany proces (zbiór wzajemnie powiązanych działań, które przekształcają elementy wejściowe na wyjściowe) nastawiony na uzyskiwanie określonych rezultatów. BPMN koncentruje się na sekwencji procesu z trzema rodzajami podprocesów:
+
+\begin{itemize}
+	\item \textbf{Prywatne} (Wewnętrzne procesy biznesowe) - Wykonywane są wewnątrz jednostki organizacyjnej (w ogólnych przepływach pracy procesów BPM),
+	\item \textbf{Publiczne} (Abstrakcyjne procesy)- ilustrują interakcję między wewnętrznymi procesami a zewnętrznymi partnerami biznesowymi (wskazując sekwencję interakcji/wiadomości wewnętrznego procesu z zewnętrznymi użytkownikami). Ponadto przedstawiane są tylko czynności obejmujące zewnętrzną komunikację (wskazując przepływ sterowania),
+	\item \textbf{Globalne} (Procesy współpracy) - ilustrują interakcje między dwoma lub więcej partnerami biznesowymi. Sekwencja czynności pokazuje wymianę wiadomości między jednostkami.
+\end{itemize}
+
+\subsubsection{BPEL - Business Process Execution Language for Web Services}
+
+Język zorientowany na procesy i wykonanie takiego zapisu w specjalizowanym silniku. Został opracowany m.in. przez IBM i Microsoft. Jest to przede wszystkim język do definiowania procesów biznesowych w usługach sieciowych. BPEL zawiera zarówno warstwę abstrakcyjną (definiowane są w niej parametry i ograniczenia), jak i warstwę niskiego poziomu (definiowane są w niej wykonywalne procesy). Najpopularniejsze implementacje tego języka to Microsoft BizTalk oraz JBoss jBPM.
+
+\subsubsection{BPML - Business Process Management Language}
+
+Konkurent dla BPEL, opracowany przez Business Process Management Initiative. Pozwala na automatyczne tłumaczenie postaci graficznej do kodu konkurencyjnego języka BPEL. Pod względem działania nie różni się znacząco od BPEL, jest jednak mniej popularny ze względu na brak tak szerokiego wsparcia jak BPEL
