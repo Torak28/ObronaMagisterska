@@ -1,1 +1,100 @@
 \subsection{Współczesne zagrożenia bezpieczeństwa oraz sposoby przeciwdziałania im}
+
+Pojęcie „zagrożenia” jest często błędnie używane - według standardów ISO 27000 i 27005 zagrożenia bezpieczeństwa (aby nie mylić z podatnościami lub ryzykiem) to zdarzenia które mają potencjał zagrażać bezpieczeństwu systemu (tzn. wpłynąć na poufność, integralność lub dostępność). [Podatności to słabości systemu które mogą zostać wykorzystane przez zagrożenia, np. zagrożenie: pożar, podatność: brak kopii zapasowej i to skutkuje ryzykiem utraty danych] \\
+
+Zagrożenia są zawsze obecne, ale można im przeciwdziałać poprzez procedury bezpieczeństwa. Przez przeciwdziałanie rozumiane są działania mające na celu powstrzymanie negatywnego wpływu zagrożenia, lub jeżeli jest to niemożliwe, zredukowanie skutków lub ułatwienie czynności naprawczych. \\
+
+Przeciwdziałanie zagrożeniom jest powiązane z pojęciem zarządzania ryzykiem, ponieważ akcje i procedury mające przeciwdziałać zagrożeniom są zazwyczaj tworzone mając na uwadze prawdopodobieństwo, że zagrożenie wykorzysta pewną podatność, oraz jak duży wpływ będzie to miało na bezpieczeństwo systemu. Tworząc plany przeciwdziałania trzeba też mieć na uwadze koszty oraz wpływ na jedną z części bezpieczeństwa – dostępność. Przeciwdziałanie zagrożeniom musi więc być opracowane dla konkretnego przypadku – nie ma sensu budować budynku odpornego na trzęsienia ziemi w Polsce, lub wydawać milionów na ochronę danych wartych kilkanaście tysięcy. \\
+
+Istnieją dwa główne sposoby kategoryzacji zagrożeń zaproponowane przez standard ISO 27005:
+
+\begin{itemize}
+	\item ze względu na \textbf{źródło pochodzenia} - wydarzenia naturalne (E - environmental), wydarzenia przypadkowe (A - accidental) i wydarzenia umyślne (D - deliberate)
+	\item ze względu na \textbf{typ zagrożenia}: uszkodzenia fizyczne, klęski żywiołowe, utrata niezbędnych mediów, zakłócenia spowodowane promieniowaniem, utrata kontroli nad danymi, uszkodzenia techniczne, nieautoryzowane działania, niemożność zrealizowania czynności biznesowych. Sposoby przeciwdziałania zagrożeniom są zazwyczaj podobne dla różnych zagrożeń tego samego typu.
+\end{itemize}
+
+\subsubsection{Przykłady zagrożeń i sposoby przeciwdziałania}
+
+\begin{itemize}
+	\item \textbf{Uszkodzenia fizyczne}
+	\begin{itemize}
+		\item Pożar (A,D,E)
+		\item Zniszczenie sprzętu lub nośników danych (A,D,E)
+		\item Przeciwdziałanie:
+		\begin{itemize}
+			\item geo-replikacja danych/usług, tak aby strata jednej lokacji nie wiązała się z utratą danych czy dostępności.
+			\item Przestrzeganie najnowszych zarządzeń p.poż
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{Klęski żywiołowe}
+	\begin{itemize}
+		\item Powódź (E)
+		\item Trzęsienie ziemi (E)
+		\item Przeciwdziałanie:
+		\begin{itemize}
+			\item Geo-replikacja
+			\item Odpowiedni dobór lokalizacji sprzętu/danych
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{Utrata niezbędnych mediów}
+	\begin{itemize}
+		\item Utrata zasilania (A,D,E)
+		\item Utrata połączenia z Internetem (A,D)
+		\item Przeciwdziałanie:
+		\begin{itemize}
+			\item Duplikacja mediów – np. internet od 2 dostawców, po innej infrastrukturze sieciowej, awaryjny generator prądu
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{Zakłócenia spowodowane promieniowaniem}
+	\begin{itemize}
+		\item Zakłócenia spowodowane promieniowaniem elektromagnetycznym (A,D,E)
+		\item Zakłócenia spowodowane promieniowaniem cieplnym (A,D,E)
+		\item Przeciwdziałanie:
+		\begin{itemize}
+			\item Ekranowanie wrażliwych elementów
+			\item Redundantne systemy głosujące nad decyzją
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{Utrata kontroli nad danymi}
+	\begin{itemize}
+		\item Kradzież lub manipulacja sprzętu/dokumentów (D)
+		\item Phishing (D)
+		\item Wyciek danych (A,D)
+		\item Przeciwdziałanie:
+		\begin{itemize}
+			\item Implementacja systemów kontroli dostępu
+			\item Szkolenie pracowników w zakresie bezpieczeństwa komputerowego, w szczególności Social Engineering
+			\item „Znaki wodne”
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{Uszkodzenia techniczne}
+	\begin{itemize}
+		\item Błędne działanie sprzętu (A)
+		\item Przepełnienie systemów zbioru informacji (A,D)
+		\item Przeciwdziałanie:
+		\begin{itemize}
+			\item Kupowanie i eksploatacja renomowanego sprzętu, o wysokiej odporności na uszkodzenia
+			\item Regularne/automatyczne przeglądy techniczne
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{Nieautoryzowane działania}
+	\begin{itemize}
+		\item Nielegalne przetwarzanie danych (D)
+		\item Użycie podrobionego lub skopiowanego oprogramowania (A,D)
+		\item Przeciwdziałanie:
+		\begin{itemize}
+			\item Szkolenie pracowników w zakresie praw przetwarzania danych oraz własności intelektualnej
+			\item Instalacja oprogramowania tylko przez profesjonalnych administratorów
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{Niemożność zrealizowania czynności biznesowych}
+	\begin{itemize}
+		\item Brak dostępności personelu (A,D,E)
+		\item Błędne wykonanie procedur (A)
+		\item Przeciwdziałanie:
+		\begin{itemize}
+			\item Zatrudnianie odpowiedniej ilości pracowników i nieskupianie wiedzy w pojedynczych jednostkach
+			\item Szkolenie pracowników
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
