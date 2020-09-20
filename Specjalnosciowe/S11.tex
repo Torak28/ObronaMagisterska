@@ -1,1 +1,31 @@
 \subsection{Klasyfikacja złośliwego oprogramowania. Definicja i kroki analizy powłamaniowej}
+
+Klasyfikacja złośliwego oprogramowania Szkodliwe oprogramowanie/malware - programy mające szkodliwy wpływ na system komputerowy/użytkownika Klasyfikacja: 
+
+\begin{itemize}
+	\item \textbf{Backdoor} - luka w zabezpieczeniach systemu utworzona umyślnie w celu późniejszego wykorzystania 
+	\item \textbf{Bomba logiczna}(\textit{logic bomb}) - fragment kodu celowo wstawiony do systemu, uruchamiający złośliwą funkcję, gdy zostaną spełnione określone warunki, np. atak uruchamiany przez określone wydarzenie, datę lub godzinę 
+	\item \textbf{Botnet} - grupa komputerów (zombie) zainfekowanych szkodliwym oprogramowaniem (np. robakiem) pozostającym w ukryciu przed użytkownikiem i pozwalającym jego twórcy na sprawowanie zdalnej kontroli nad wszystkimi komputerami w ramach botnetu; wykorzystywany m. in. do ataków DDoS 
+	\item \textbf{Exploit} - kod umożliwiający bezpośrednie włamanie do komputera ofiary wykorzystujący konkretne bugi lub słabości oprogramowania ofiary 
+	\item \textbf{Adware} - oprogramowanie, wyświetlające niepożądane przez odbiorcę reklamy. 
+	\item \textbf{Spyware} - gromadzi informacje o użytkownikach bez ich wiedzy 
+	\item \textbf{Ransomware} - blokuje dostęp do systemu komputerowego lub uniemożliwia odczyt zapisanych w nim danych (często poprzez techniki szyfrujące), a następnie żąda od ofiary okupu za przywrócenie stanu pierwotnego 
+	\item \textbf{Robak}(\textit{worm}) - analogicznie do wirusów rozprzestrzeniają się poprzez sieć; w odróżnieniu od wirusów nie wymagają programu hostującego, zamiast tego wykorzystują luki w zabezpieczeniach systemów lub stosują socjotechniki, aby użytkownik je uruchomił 
+	\item \textbf{Koń trojański} - klasa zagrożeń komputerowych, które wydają się wykonywać pożądaną funkcję, ale w rzeczywistości wykonują niejawne złośliwe funkcje 
+	\item \textbf{Rootkit} - zaprojektowany w celu ukrycia lub zamaskowania faktu naruszenia bezpieczeństwa systemu, np. ukrywa istnienie szkodliwych procesów lub plików przed użytkownikiem 
+	\item \textbf{Keylogger} - odczytują i zapisują wszystkie naciśnięcia klawiszy użytkownika próbując wybrać wzorce, które synchronizują się z pewnymi informacjami 
+	\item \textbf{Wirus} - program lub fragment kodu, potrafiący się replikować i zainfekować komputer bez zgody lub wiedzy właściciela 
+\end{itemize}
+
+\subsubsection{Definicja i kroki analizy powłamaniowej}
+
+\textbf{Analiza powłamaniowa} - polega na gromadzeniu dowodów do postępowania sądowego lub po prostu analizie informacji, które pozwolą odtworzyć metodologię ataku zastosowaną przez cyberprzestępców \\
+
+Kroki analizy powłamaniowej: 
+
+\begin{itemize}
+	\item \textbf{wykrycie włamania} - wszystko, co wygląda na nienormalne – nie dające się wytłumaczyć normalnym działaniem systemu bez ingerencji administratora, np. pliki w katalogach systemowych z datą modyfikacji (lub ctime) w przyszłości, ctime plików systemowych inny niż z daty instalacji/aktualizacji systemu, katalogi o podejrzanych nazwach jak “...” lub “.. “ (dwie kropki i spacja), niewłaściwe prawa dostępu plików systemowych 
+	\item \textbf{szukanie śladów} - dla potwierdzenia włamania, wskazujących na sposób dokonania włamania (ślady exploitów lub innych luk), w celu oszacowania „strat” (zakresu włamania), w celu znalezienia potencjalnych furtek; szukać należy w logach systemowych, konfiguracji systemu, przy użyciu komend diagnostycznych i/lub snapshotów konfiguracji (np. tripware) 
+	\item \textbf{przywrócenie stanu sprzed włamania} - unieszkodliwienie furtek, odtworzenie zmodyfikowanych plików i konfiguracji systemu 
+	\item \textbf{zabezpieczenie systemu na przyszłość} - instalacja łat oprogramowania, poprawienie konfiguracji systemu, zainstalowanie dodatkowych zabezpieczeń (firewalle itp.) 
+\end{itemize}
