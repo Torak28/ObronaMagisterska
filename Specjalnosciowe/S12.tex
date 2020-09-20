@@ -1,1 +1,92 @@
 \subsection{Zastosowania, zasady budowy i funkcjonowania cyfrowych asystentów}
+
+Najpierw trzeba przedstawić czym jest asystent cyfrowy. \textbf{Cyfrowy asystent}(\textit{Digital assistant}) lub asystent wirtualny to program który może wykonywać zadania lub usługi na podstawie komend lub pytań otrzymanych od osoby jego wykorzystującej. Czasami termin „chatbot” również jest używany w odniesieniu do wirtualnych asystentów. «Chatbot» to asystent komunikacja z którym jest możliwa tylko przez komendy tekstowe, chat online, bez użycia komunikacji głosowej. \\
+
+Zasady budowy i funkcjonowania Każdy asystent wirtualny składa się z trzech podstawowych elementów: 
+
+\begin{itemize}
+	\item Aplikacja lub strona internetowa za pomocą której klient będzie komunikować z asystentem. 
+	\item Moduł odpowiadający za przetwarzanie języka naturalnego ( NLP model ). 
+	\item Moduł który wykonuje otrzymaną komendę lub łączy asystenta z serwisami które w stanie przekazać odpowiedz na otrzymane pytanie od użytkownika. 
+\end{itemize}
+
+Pierwszy element czyli aplikacja lub strona internetowa, najcześciej przedstawia sobą tylko interfejs dla zadania pytana lub wyświetlenia odpowiedzi i komunikacji z serwerem na którym umieszczone są inne elementy takiego systemu. Dodatkowo taka aplikacja może posiadać komendę podstawową dla aktywacji asystenta, na przykład «Ok Google» czy « Hej Siri». Taka komenda rozpoznawana jest lokalnie w bardzo uproszczonym modelu «Speech to text». Model jest uproszony przez to że pełne modeli rozpoznawania głosu i przetwarzania języka naturalnego wymagają nie malej mocy obliczeniowej często niedostępnej w urządzeniach na których asystent jest zainstalowany. \\
+
+Drugiem elementem takiego systemu, jest moduł przetwarzania języka naturalnego, czyli moduł NLP. NLP to dziedzina, łącząca zagadnienia sztucznej inteligencji i językoznawstwa, zajmująca się automatyzacją analizy, rozumienia, tłumaczenia i generowania języka naturalnego przez komputer. Przetwarzanie języka naturalnego obejmuje wiele różnych technik interpretacji języka ludzkiego od metod statystycznych do uczenia maszynowego. Zadaniem NLP jest rozbicie języka na krótsze, elementarne kawałki i zrozumienie relacji między nimi. \\
+
+Głównym zadaniem NLP w cyfrowych asystentach jest przetworzenie pytań lub komend użytkownika w postać oczyszczoną. Oczyszczanie tekstu składa się z 4 głównych elementów:
+
+\begin{itemize}
+	\item \textbf{Tokenizacja} 
+	\item \textbf{Normalizacja} 
+	\item \textbf{Generalizowanie} 
+	\item \textbf{Usuwanie szumu} \\
+\end{itemize}
+
+\textbf{Tokenizacja} jest procesem, który dzieli tekst na tokeny (słowa lub zdania). Podział na tokeny pozwala na właściwe dalsze przetwarzanie słów („gwiazdozbiór” -> ”zbiór gwiazd”. \\
+
+\textbf{Normalizacja} zapewnia spójność wyrazów poprzez sprowadzanie wszystkich liter do jednakowej wielkości, czy zamiany wszystkich słownie napisanych liczb na cyfry. \\
+
+\textbf{Proces generalizacji} polega na sprowadzaniu słów do ich formy podstawowej (ujednoliceniu form wyrazów) za pomocą lematyzacji lub stemmingu. Lematyzacja to sprowadzanie formy fleksyjnej wyrazu do postaci słownikowej („w czerwcu” - > „w czerwiec”), natomiast stemming polega na usuwaniu przedrostków oraz przyrostków doprowadzając słowo do jego członu (‘koty”, „kocie” -> „kot”). \\
+
+\textbf{Proces usuwania szumu} ma za zadanie usuwanie części tekstu, która nie niesie informacji (interpunkcja, białe znaki, stop words / stop listy (słowa o małym znaczeniu (spójniki: „i”, „oraz”, „lub”) oraz słowa popularne („mp3”, „xd”), czasem też cyfry). \\
+
+Moduł odpowiadający za przetwarzanie głosu w text w obecnie używanych asystentach może być zrealizowany na dwa sposoby: 
+
+\begin{itemize}
+	\item za pomocą \textbf{ukrytego modelu markowa} ( HMM )
+	\item za pomocą \textbf{głębokich sieci neuronowych.} \\
+\end{itemize} 
+
+\textbf{Proces Markowa} – ciąg zdarzeń, w którym prawdopodobieństwo każdego zdarzenia zależy jedynie od wyniku poprzedniego. \\
+
+\textbf{HMM} — proces Markowa, którego stany są ukryte, stany te odpowiadają fonemom mowy ludzkiej, połączenia między nimi mają wagi zależne od prawdopodobieństwa wystąpienia jednego fenomu po drugim. HMM dostaje rozkład prawdopodobieństw wystąpienia różnych fenomów w aktualnie badanym fragmencie dźwiękowym i następnie, na podstawie wiedzy jaki fenom wystąpił w poprzedniej analizie, uwydatnia wartości prawdopodobieństwa fenomów które na podstawie połączeń między jego stanami powinny wystąpić. \\
+
+W pierwszym przypadku najpierw sygnał jest próbkowany a następnie odbywa się ekstrakcja cech. Sygnał jest dzielony na fragmenty i każdy fragment zostaje przekształcony na wektor cech. Dalej taki wektor podawany jest do modelu akustycznego. Ukryte stany HMM odpowiadają poszczególnym fonemom. Następnie słownik wymowy określa prawdopodobieństwo z jakim podana sekwencja fonemów składa się w wyraz a model językowy określa prawdopodobieństwo wystąpienia danej sekwencji słów w określonym języku. \\
+
+Oczywiście niektóre elementy można zastąpić za pomocą głębokich sieci neuronowych, np realizacja ekstrakcji cech za pomocą DNN z ograniczoną liczbą wejść. \\
+
+Aby uzyskać end to end ASR ( automatic speech recognition ) trzeba zamienić jak najwięcej części tradycyjnej HMM siecią neuronową. \\
+
+Ostatni moduł najczęściej wyszukuje odpowiedz na pytanie w bazie wiedzy asystenta lub prosi zewnętrzne serwisy na udostępnię odpowiedzi na podane pytanie. \\
+
+\subsubsection{Zastosowania}
+
+Można wyróżnić kilka zastosowań asystentów cyfrowych: 
+
+\begin{itemize}
+	\item \textbf{Obywatelskie} 
+	\item \textbf{Wojskowe} 
+	\item \textbf{Medyczne} 
+\end{itemize}
+
+\textbf{Obywatelski}: 
+
+\begin{itemize}
+	\item \textbf{Urządzenia mobilne}. W urządzeniach mobilnych asystenci cyfrowe najczęściej używane są dla wykonania prostych zapytań, np. kiedy ręce użytkownika są zajęte, informacja o pogodzie, lub o znanych faktach, ustawienie timera lub budzika, sprawdzenie zaplanowanych spotkań. Jeżeli wybrany asystent udostępnia API dla deweloperów może on również otrzymywać informacje od aplikacji które taki API wdrożyli, np. Informacja o ostatnim zamówieniu jedzenia czy o ilości wykonanych kroków. Integracja z różnymi serwisami i urządzeniami umożliwia dodatkowe funkcjonalności asystentów np: włączenie muzyki na smart głośnikach, sterowania temperaturą w pomieszczeniu, włączenie i wyłączenie lampek. Niektóre asystenci pozwalają na komunikację z innymi osobami bez użycia głosu, np. Google Duplex. Duplex umożliwia rezerwacje usług w miejscach nie posiadających dostępnej rezerwacji online. Dodatkowo Duplex może odpowiadać na połączenie wchodzące gdy numer nie jest znany. Użytkownik w tym momencie widzi transkrypcje rozmowy i może rozpocząć samodzielnie odpowiadać w każdym momencie. 
+	\item \textbf{Inteligentne głośniki}. Inteligentne głośniki posiadają większość funkcjonalności dostępnych w urządzeniach mobilnych. Najczęściej one wykorzystywane gdy użytkownik nie ma dostępu do swojego telefonu lub jego użycie nie jest wygodne. 
+	\item \textbf{Samochody}. Istnieje trzy różnych podejścia do użycia asystentów cyfrowych w samochodach: Wykorzystanie asystenta wbudowanego w telefon ( Android Auto lub Apple CarPlay ) Zainstalowanie dodatkowego urządzenia z wbudowanym asystentem ( Chris lub Mobileye ) Całkowita integracja asystenta do systemów samochodu ( Android Automotive OS, MBUX, BMW Intelligent Personal Assistant... ) \\
+	
+	Android Auto lub Apple CarPlay za dość niski koszt pozwalają użytkownikowi połączyć swój telefon z ekranem multimedia swojego samochodu. Taka integracja pozwala użytkownikowi wykorzystywać wiele funkcji swojego telefonu, np nawigacja, włączenie muzyki na głośnikach, odpowiadać na połączenie wchodzące za pomocą mikrofonów i głośników samochodu. Jednak nie pozwala takie rozwiązanie na sterowanie samochodem. \\
+	
+	Zainstalowanie dodatkowego urządzenia pozwala wykonywać zaimplementowane przez producenta funkcji gdy samochód jest stary i nie posada możliwości integracji bezpośrednio z ekranem multimedia. \\
+	
+	Całkowita integracja asystenta do systemów samochodu pozwala na sterowania funkcjami samochodu, np włączenie ogrzewania krzesła, zmiana temperatury powietrza, otwarcie okna. \\
+\end{itemize}
+	
+\textbf{Wojsko}:
+
+\begin{itemize}
+	\item \textbf{Komunikacja z kandydatami} W niektórych krajach używany jest do interakcji z potencjalnymi żołnierzami aby poradzić im najlepszą profesje wojskową zgodnie z ich umiejętnościami. 
+	\item \textbf{Wspomaganie sterowaniem} W następnym pokoleniu okrętów wojennych będą zainstalowane asystenty głosowe aby ułatwić wykorzystanie niektórych funkcji, będzie dodatkowo ubezpieczony danymi biometrycznymi aby uniemożliwić użycie osób nieautoryzowanych. \\
+	
+	Rzadko używany na polu bitwy bo jest dojść łatwo imitować glos i uzyskać dostęp do informacji. \\
+\end{itemize}
+
+\textbf{Medycyna}:
+
+\begin{itemize}
+	\item \textbf{Zastąpienie podstawowego personalu} Dobrym przykładem cyfrowego asystenta w medycynie jest chatbot zastępujący recepcjonistę w szpitalu. On nadaje takie same informacje jak i zwykła osoba jednak może w tym samym momencie pracować z dużą ilością osób. Jest używany w niektórych szpitalach Australii jako dodatkowy recepcjonista. 
+	\item \textbf{Terapia} Woebot to chatbot który jest używany dla terapii depresji. Nie zamienia on zwykłego lekarza a tylko dodatkowo pomaga pacjentowi. 
+	\item \textbf{Diagnozowanie chorób} Istnieją również Cyfrowi asystenci, które konsultują i udzielają porady medyczne dla swoich użytkowników. Ich głównym celem jest pomoc pacjentom w znalezieniu rozwiązania dla najczęstszych symptomów. Zadaniem takich asystentów jest zapewnienie dostępnej i natychmiastowej pomocy tym, którzy nie mają szybkiego dostępu do zwyklej pomocy medycznej, jednak nie mogą oni jeszcze zastąpić lekarzy. \\
+\end{itemize}
