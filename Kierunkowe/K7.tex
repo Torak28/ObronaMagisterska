@@ -1,20 +1,25 @@
 \subsection{Analiza systemów informatycznych z użyciem sieci Petriego}
 
-\textbf{Sieci Petriego} – jest to matematyczna reprezentacja systemów rozproszonych. Umożliwiają one badanie zjawisk współbieżnych zachodzących w systemach wzajemnie się warunkujących w czasie. Uogólniają one teorię automatów. Podstawowa wersja sieci Petriego składa się z:
+\textbf{Sieci Petriego} – jest to matematyczna reprezentacja systemów rozproszonych. Umożliwiają one badanie zjawisk współbieżnych zachodzących w systemach wzajemnie się warunkujących w czasie. \textbf{Uogólniają one teorię automatów}.
+
+\subsubsection{Definicja}
+
+Podstawowa wersja sieci Petriego składa się z:
 
 \begin{itemize}
 	\item \textbf{miejsc} (odpowiadających warunkom),
 	\item \textbf{przejść} (odpowiadających zdarzeniom),
-	\item \textbf{łuków} (krawędzi, odpowiadających związkom między zdarzeniami i warunkami.
+	\item \textbf{łuków} (krawędzi, odpowiadających związkom między zdarzeniami i warunkami. \\
 \end{itemize}
 
-Aby opisać konkretny stan układu, potrzebne są żetony które można przemieszczać pomiędzy miejscami poprzez przejścia po krawędziach grafu. Oznaczeniami są:
+Aby opisać konkretny stan układu, potrzebne są żetony które można przemieszczać pomiędzy miejscami poprzez przejścia po krawędziach grafu. Oznaczeniami są:
 
 \begin{itemize}
 	\item \textbf{kropki} – żetony
 	\item \textbf{prostokąty}(grube kreski) – przejścia
 	\item \textbf{okręgi} – miejsca
-	\item \textbf{strzałki} – krawędzie, łuki
+	\item \textbf{strzałki} – krawędzie, łuki \\
+
 \end{itemize}
 
 Działanie sieci polega na przesuwaniu się znaczników między miejscami sieci.
@@ -28,6 +33,8 @@ Działanie sieci polega na przesuwaniu się znaczników między miejscami sieci.
 	\item \textbf{Żywotność} – określa liczbę możliwych wykonań przejścia. Sieć jest żywa, jeżeli z każdego oznakowania można osiągnąć inne oznakowania.
 	\item \textbf{Odwracalność} – sieć jest odwracalna, jeżeli stan początkowy sieci jest osiągalny z każdego oznakowania.
 \end{itemize}
+
+\subsubsection{Analiza Sieci Petriego}
 
 Trzy główne metody analizy sieci Petriego:
 
@@ -43,16 +50,69 @@ Chcemy zaprojektować oprogramowanie dla systemu kontroli sygnalizacji świetlne
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{K7.png}
+	\includegraphics[width=0.6\linewidth]{K7.png}
 	\caption{Przykładowa sieć}
 \end{figure}
 
-
-Znaczenie miejsc na rysunku 1.3 jest następujące:
+Znaczenie miejsc na powyższym rysunku jest następujące:
 
 \begin{itemize}
-	\item p0, p1, p2 – światła uliczne dla aut, odpowiednio p0 – czerwone, p1 – żółte, p2 – zielone,
-	\item p3, p4 – światła uliczne dla pieszych, odpowiednio p3 – czerwone, p4 – zielone,
-	\item p5, p6 – miejsca służące do synchronizacji (np. flagi umieszczone w oprogramowaniu).
+	\item \textbf{$p_0$}, \textbf{$p_1$}, \textbf{$p_2$} – światła uliczne dla aut, odpowiednio $p_0$ – czerwone, $p_1$ – żółte, $p_2$ – zielone,
+	\item \textbf{$p_3$}, \textbf{$p_4$} – miejsca służące do synchronizacji (np. flagi umieszczone w oprogramowaniu),
+	\item \textbf{$p_5$}, \textbf{$p_6$} – światła uliczne dla pieszych, odpowiednio $p_5$ – czerwone, $p_6$ – zielone
 \end{itemize}
 
+\subsubsection{Formalny Opis powyższej sieci}
+
+\begin{align*}
+SP = &\langle P, T, F, H, W, C, M_0\rangle \\
+P = &\{p_0, p_1, p_2, p_3, p_4, p_5, p_6\} \\
+T = &\{t_0, t_1, t_2, t_3, t_4 \} \\
+F =  &\big\{ 
+\{p_0, t_1\}, \{t_1, p_1\}, \{p_1, t_2\}, \{t_2, p_2\},\{p_2, t_0\}, \{t_0, p_0\},  \{t_0, p_3\}, \\
+&\{p_3, t_3\}, \{t_3, p_6\}, \{p_6, t_4\}, \{t_4, p_5\}, \{p_5, t_3\}, \{t_4, p_4\}, \{p_4, t_1\}         \big\} \\
+H =  &\emptyset \\
+W = &\big\{ 1, 1, ... , 1\big\} \\
+C = &\big\{ \infty, \infty, ... , \infty \big\} \\
+M_0 = &\big\{ p_0 = 1, p_4 = 1, p_5 = 1 \big\}
+\end{align*}
+
+, gdzie:
+\begin{multicols}{2}
+	\begin{itemize}[nolistsep]
+		\item $SP$ - sieć Petriego
+		\item $P$ - zbiór miejsc
+		\item $T$ - zbiór przejść
+		\item $F$ - zbiór łuków zwykłych
+	\end{itemize}
+	\columnbreak
+	\begin{itemize}[nolistsep]
+		\item $H$ - zbiór łuków hamujących
+		\item $W$ - wagi łuków
+		\item $C$ - pojemność miejsc
+		\item $M_0$ - znakowanie początkowe
+	\end{itemize}
+\end{multicols}
+
+\subsubsection{Graf osiągalności powyższej sieci}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{K7_1.png}
+	\caption{Przykładowy graf osiągalności}
+\end{figure}
+
+\subsubsection{Analiza behawioralna}
+
+\begin{itemize}
+	\item \textbf{Ograniczoność sieci} \\
+	\textbf{Jest} ograniczona (1-ograniczona), co łatwo zauważyć na grafie osiągalności. Dla każdego znakowania w każdym miejscu znajduje się co najwyżej jeden znacznik. 
+	\item \textbf{Bezpieczeństwo sieci} \\
+	Analizowana sieć \textbf{jest} bezpieczna, ponieważ jest 1-ograniczona(patrz punkt wyżej).
+	\item \textbf{Zachowawczość sieci} \\
+	Badana sieć \textbf{nie jest} zachowawcza. Liczba znaczników w poszczególnych stanach zmienia się od 2 do 3.
+	\item \textbf{Żywotność sieci} \\
+	Sieć z \textbf{jest} żywotna, ponieważ w każdym jej osiągalnym stanie można odpalić przynajmniej jedno przejście i każde jej przejście może być kiedyś odpalone.
+	\item \textbf{Odwracalność}  \\
+	sieć \textbf{jest} odwracalna, stan początkowy sieci jest osiągalny z każdego oznakowania.
+\end{itemize}
