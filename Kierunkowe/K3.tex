@@ -1,26 +1,77 @@
 \subsection{Problem komputerowo wspomaganej diagnostyki medycznej i metody budowy algorytmów diagnostycznych}
 
-W procesie diagnostyki medycznej wyróżnia się trzy zasadnicze etapy, nazywane typami decyzji klinicznych:
+Szpitalny system informacyjny(\textit{Hospital Information System} – \textbf{HIS}) System (komputerowy) do akwizycji, przetwarzania, archiwizacji, wizualizacji i przesyłania informacji związanej z realizacją usług świadczonych przez szpital (procesu diagnostyczno-terapeutycznego) oraz – dodatkowo – w celu wspomagania i usprawnienia zarządzania, podejmowania decyzji i kontroli w szpitalu (organizacji).
+
+\subsubsection{Typy decyzji klinicznych}
+
+W procesie diagnostyki medycznej wyróżnia się trzy zasadnicze etapy, nazywane typami decyzji klinicznych:
 
 \begin{itemize}
 	\item \textbf{Diagnoza} - Określenie tego, co wiemy o pacjencie - stan początkowy, rozpoznane charakterystyczne cechy, objawy chorobowe
 	\item \textbf{Proces diagnostyczny} - Wybór odpowiednich badań, pytań i testów, wraz z uwzględnieniem ich zasadności, ryzyka, kosztów i wymaganego czasu
-	\item \textbf{Zarządzanie (terapia)} - Zaplanowanie procesu leczenia, nadzorowanie go, weryfikacja postawionej diagnozy
+	\item \textbf{Zarządzanie (terapia)} - Zaplanowanie procesu leczenia, nadzorowanie go, weryfikacja postawionej diagnozy \\
 \end{itemize}
+
+\subsubsection{Dostarczanie Informacji klinicznych}
 
 W procesie diagnostyki, systemy komputerowe mogą dostarczyć informacji w dwojaki sposób:
 
 \begin{itemize}
-	\item \textbf{Pośrednio} - System dostarcza informacyjne zasoby medyczne, umożliwiające specjaliście łatwą analizę i wyszukiwanie informacji, w celu stawiania trafniejszych diagnoz i szybszego uzyskiwania danych dotyczących pacjenta, jego objawów i potencjalnych schorzeń. Przykładem takiego rodzaju systemu jest Rejestr Przypadków Medycznych, zawierający opisy pacjentów, wraz z postawionymi diagnozami i skutkami terapii.
-	\item \textbf{Bezpośrednio} - Na podstawie odpowiednio zapisanej wiedzy medycznej, system sam wyznacza diagnozę dla pacjenta, wykorzystując już gotowe modele decyzyjne, bądź przeprowadzając ekstrakcję danych i tworząc model decyzyjny na ich podstawie. Przykładem takiego systemu może być ISABEL, którego twórcy chwalą się poprawnością diagnoz na poziomie 96%.
+	\item \textbf{Pośrednio} - System dostarcza informacyjne zasoby medyczne, umożliwiające specjaliście łatwą analizę i wyszukiwanie informacji, w celu stawiania trafniejszych diagnoz i szybszego uzyskiwania danych dotyczących pacjenta, jego objawów i potencjalnych schorzeń. Przykładem takiego rodzaju systemu jest \textbf{Rejestr Przypadków Medycznych}, zawierający opisy pacjentów, wraz z postawionymi diagnozami i skutkami terapii.
+	\item \textbf{Bezpośrednio} - Na podstawie odpowiednio zapisanej wiedzy medycznej, system sam wyznacza diagnozę dla pacjenta, wykorzystując już gotowe modele decyzyjne, bądź przeprowadzając ekstrakcję danych i tworząc model decyzyjny na ich podstawie. \\
 \end{itemize}
+
+\subsubsection{CAD(ang. \textit{computer-aided diagnosis})}
+
+Systemy CADe (computer-aided detection), zwane również CADx (computer-aided diagnosis) to systemy informatyczne mające na celu wspomaganie lekarzy w interpretacji obrazów medycznych. Systemy CAD przetwarzają obrazy medyczne w celu uwypuklenia cech zdjęcia wskazujących na zmiany chorobowe. Zazwyczaj zdjęcia są wysyłane do serwera z systemem CAD używając standardu \textbf{DICOM}. DICOM znajduje zastosowanie głównie w przetwarzaniu obrazów tomografii komputerowej, obrazowania metodą rezonansu magnetycznego, pozytonowej tomografii emisyjnej \\
+
+Aby wykryć zmiany na obrazie wykonywane są następujące kroki:
+\begin{itemize}
+	\item \textbf{Wstępne przetwarzanie} obrazu
+	\begin{itemize}
+		\item Redukcja artefaktów(błędów) na zdjęciu
+		\item Redukcja szumu
+		\item Poprawienie kontrastu/histogramu/jasności
+		\item Filtrowanie
+	\end{itemize}
+	\item \textbf{Segmentacja}
+	\begin{itemize}
+		\item Rozróżnienie różnych struktur na zdjęciu np. organów
+		\item Porównanie wydzielonych struktur z bazą anatomiczną
+	\end{itemize}
+	\item Każdy segment, na którym wykryto \textbf{obszary zainteresowań jest analizowany} ze względu na inwidualne cechy
+	\begin{itemize}
+		\item Zwięzłość
+		\item Forma, rozmiar, lokalizacja
+		\item Powiązanie z innymi wykrytymi struktarami(otoczenie)
+		\item Średni poziom szarości obszaru
+		\item Proporcja poziomu szarości na zewnątrz struktury do poziomu szarości wewnątrz struktury
+	\end{itemize}
+	\item \textbf{Kwalifikacja} odnalezionej struktury na podstawie zidentyfikowanych cech, za pomocą jednego z algorytmów kwalifikujących:
+	\begin{itemize}
+		\item K-najbliższych sąsiadów
+		\item Klasyfikator minimalnej odległości
+		\item Klasyfikator Bayesa
+		\item Sztuczne sieci neuronowe
+		\item PCA \\
+	\end{itemize}
+\end{itemize}
+
+Przykłady zastosowań systemów CAD:
+\begin{itemize}
+	\item Wykrywanie \textbf{raka piersi},
+	\item Wykrywanie \textbf{raka płuc},
+	\item Wykrywanie \textbf{chorób serca}.
+\end{itemize}
+
+\subsubsection{Problemy}
 
 W publikacji badawczej \textit{Ten commandments for effective clinical decision support: making the practice of evidence-based medicine a reality}, zdefiniowane zostało 10 podstawowych założeń jakie spełniać powinny systemy bezpośredniej diagnostyki medycznej. Na ich podstawie określić można główne problemy, z jakimi zmagać się muszą autorzy takich systemów:
 
 \begin{itemize}
 	\item \textbf{Duża ilość zmiennych w procesie analizy} - Ilość informacji jakie analizowane są w procesie diagnostyki medycznej jest bardzo duża, a powiązania pomiędzy nimi nie zawsze da się w jasny sposób określić. Ciężko jest również przeprowadzić selekcję istotnych cech, ponieważ eliminowanie czynników wykonywane musi być bardzo ostrożnie, aby uniknąć pozbycia się istotnych danych. Przykładowo, usunięcie informacji o alergii pacjenta na jedną z substancji może skutkować podaniem leku, który doprowadzi do jego śmierci.
 	\item \textbf{Wydajność i złożoność obliczeniowa} - W diagnostyce medycznej istotnym czynnikiem jest czas, decyzje często podejmowane muszą być bardzo szybko, więc systemy nie mogą przeprowadzać analizy w sposób nieoptymalny, oraz muszą potrafić reagować bardzo szybko w sytuacjach kryzysowych. Przykładowo, jeżeli pacjent dostaje nagłego ataku, system musi określić podanie odpowiedniego środka zapobiegawczego w możliwie najkrótszym czasie, uwzględniając jego alergie, wydolność organizmu itp.
-	\item Konieczność dopasowywania się do sytuacji - System musi umieć dopasować się do dostępnego w danej placówce sprzętu i zakresu substancji leczniczych, znajdując alternatywne sposoby terapii. Dopasowywanie się powinno również uwzględniać zmianę decyzji w oparciu o działania przeprowadzone przez lekarza poza systemem. Przykładowo: System proponuje podanie leku A, jednak lekarz decyduje się na podanie leku B. W takim wypadku, system powinien potrafić określić dalsze kroki postępowania, w oparciu o lek B, a nie A. Jeżeli nie będzie w stanie tego zrobić, stanie się bezużyteczny w dalszym procesie leczenia.
+	\item \textbf{Konieczność dopasowywania się do sytuacji} - System musi umieć dopasować się do dostępnego w danej placówce sprzętu i zakresu substancji leczniczych, znajdując alternatywne sposoby terapii. Dopasowywanie się powinno również uwzględniać zmianę decyzji w oparciu o działania przeprowadzone przez lekarza poza systemem. Przykładowo: System proponuje podanie leku A, jednak lekarz decyduje się na podanie leku B. W takim wypadku, system powinien potrafić określić dalsze kroki postępowania, w oparciu o lek B, a nie A. Jeżeli nie będzie w stanie tego zrobić, stanie się bezużyteczny w dalszym procesie leczenia.
 	\item \textbf{Wyszukiwanie najprostszego rozwiązania} - System powinien być w stanie wyznaczyć terapię, która zaproponuje rozwiązanie problemu medycznego w najprostszy sposób, aby ograniczyć nie tylko zużycie zasobów medycznych i czas leczenia, ale również zasoby finansowe. Przykładowo, w terapii pacjenta cierpiącego na długotrwałą chorobę psychiczną spowodowaną studiami na Politechnice, system znajduje terapię lekiem A, trwającą rok, oraz terapię lekiem B, trwającą 5 lat. System powinien określić która z nich będzie rozwiązaniem lepszym pod względem czasowym, finansowym oraz zdrowotnym.
 	\item \textbf{Utrzymanie i rozwój modeli decyzyjnych} - Ze względu na bardzo częste zmiany informacji i ciągły rozwój badań w dziedzinie medycyny, konieczne jest regularne aktualizowanie i weryfikowanie działania modeli decyzyjnych wykorzystywanych do rozpoznawania i diagnozowania chorób. Przykładowo: pojawia się COVID-19, jeżeli nie zostanie on wprowadzony do bazy informacji oraz odpowiednio scharakteryzowany, system nie będzie w stanie go rozpoznać oraz zaproponować odpowiedniej diagnostyki.
 \end{itemize}
