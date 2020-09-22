@@ -2,43 +2,53 @@
 
 W sieci bezprzewodowej występuje wiele problemów bezpieczeństwa - w przypadku sieci jesteśmy narażeni na m.in. sniffing, spoofing (SMTP, WWW, ARP, DNS itd.). Ze względu na łatwy dostęp do medium transmisyjnego, przez które następuje wymiana danych łatwiejsze są ataki Main in the Middle, Evil Twin, spoofing MAC, modyfikowanie pakietów, złamanie zabezpieczeń WEP, WPA, podsłuchwanie nieszyfrowanych transmisji.
 
-\subsubsection{Man in the Middle}
+\subsubsection{Niebezpieczeństwa transakcji sieciowych}
 
-Atak polega na przechwyceniu niezbędnych do wykonania transakcji danych i tym samym kradzieży środków lub tożsamości. W celu wykonania ataku należy przechwycić komunikację pomiędzy osobą atakowaną, a bankiem, następnie przekonać użytkownika, że strona, na którą się loguje (spreparowana przez nas) jest stroną, na którą chce się zalogować. Za pomocą otrzymanych danych można uzyskać dostęp od konta użytkownika. \\
+\begin{itemize}
+	\item \textbf{Phishing} to metoda, której używa haker, aby nakłonić do ujawnienia informacji osobistych, takich jak hasła lub numery kart kredytowych, ubezpieczeń i kont bankowych. Robią to poprzez wysyłanie fałszywych e-maili lub przekierowywanie na fałszywe strony internetowe.
+	\item \textbf{Sniffing} - jest powszechnie stosowany do monitorowania i analizowania ruchu w sieci w celu wykrywania problemów oraz dbania o przepustowość i płynność przepływu danych. Ale sniffer może także zostać wykorzystany ze szkodą dla innych. Sniffery śledzą wszystkie dane, które przez nie przechodzą, w tym szyfrowane hasła i nazwy użytkowników, dzięki czemu hakerzy z dostępem do sniffera mają też dostęp do konta użytkownika, którego dane są monitorowane. Sniffera można zainstalować na dowolnym komputerze podłączonym do lokalnej sieci bez potrzeby instalacji w samym urządzeniu.
+	\item \textbf{Spoofing} - polega podszywaniu się pod kogoś lub coś, aby wykraść ważne informacje lub zyskać dostęp do kont bankowych ofiary. Jest to zbiorczy termin obejmujący spoofing adresu IP (wysyłanie komunikatów do komputera z adresu IP, który sugeruje, że wiadomość pochodzi z zaufanego źródła), spoofing e-maila (podrabianie nagłówka e-maila, aby wyglądał jakby pochodził od innej osoby lub z innego miejsca niż rzeczywiście) i spoofing DNS (modyfikacja serwera DNS w celu przekierowania ruchu z konkretnej domeny na inny adres IP).
+	\item \textbf{Pharming} to rodzaj oszustwa przypominający phishing, ale w tym przypadku odwiedzający prawdziwą stronę są przekierowani na podszywające się pod nią strony, które instalują na ich urządzeniach złośliwe oprogramowanie lub zbierają dane osobowe, np. hasła lub dane kont bankowych. 
+\end{itemize}
 
-Aby uchronić się przed tym atakiem należy sprawdzać certyfikaty stron podczas wykonywania transakcji, nie wykonywać transakcji będąc podłączonym do sieci publicznej. Banki, aby się przed tym bronić wprowadziły weryfikację SMS, w treści SMS możemy zweryfikować numer konta bankowego oraz kwotę przelewu.
+\subsubsection{Zagrożenia jakie stwarza komunikacja bezprzewodowa}
 
-\subsubsection{Sniffing transmisji}
+\begin{itemize}
+	\item \textbf{Man in the Middle}
 
-Atak polega na podsłuchiwaniu transmisji nieszyfrowanych, dzięki czemu możliwe jest uzyskanie danyh takich jak login czy hasło do różnych systemów komputerowych, co pozwala na podszywanie się pod atakującą osobę. Aby dokonać ataku wystarczy oprogramowanie pozwalajace na to (np. Whireshark) lub odpowiendio skonfigurowana karta sieciowa. \\
-Aby uchronić się przed tym atakiem można skonfigurować sieć, aby wymuszała szyfrowanie danych, nawiązywanie komunikacji w wyższych warstwach sieci w sposób szyfrowany np. TLS 1.1, SSL.
+	Atak polega na przechwyceniu niezbędnych do wykonania transakcji danych i tym samym kradzieży środków lub tożsamości. W celu wykonania ataku należy przechwycić komunikację pomiędzy osobą atakowaną, a bankiem, następnie przekonać użytkownika, że strona, na którą się loguje (spreparowana przez nas) jest stroną, na którą chce się zalogować. Za pomocą otrzymanych danych można uzyskać dostęp od konta użytkownika. \\
+	
+	Aby uchronić się przed tym atakiem należy \textbf{sprawdzać certyfikaty stron podczas wykonywania transakcji}, nie wykonywać transakcji będąc podłączonym do sieci publicznej. Banki, aby się przed tym bronić wprowadziły weryfikację SMS, w treści SMS możemy zweryfikować numer konta bankowego oraz kwotę przelewu. \\
 
-\subsubsection{Evil Twin}
 
-Atak polega na podstawieniu urządzenia (np. WiFi Pineapple) , które symuluje Access Point. W przypadku, gdy urządzenie zacznie wygłaszać mocniejszy sygnał od prawdziwego nastąpi przełączenie bez informowania użytkownika. Dzięki temu cały ruch z komputera będzie przechodził przez fałszywy Access Point, co daje możliwość łatwego przechwycenia danych.
+	\item \textbf{Sniffing transmisji}
 
-Będąc na konferencji niebezpiecznika pokazywali urządzenie WiFi Pineapple, którego używają do pentestów. Gdy w telefonie zostaje włączone WiFi, telefon wyszukuje dostępne wokół niego sieci oraz odpytuje je ”czy jesteś zapamiętaną przeze mnie siecią x?”, a urządzenie WiFi Pineapple zawsze odpowiada ”TAK”, dzięki czemu telefon się łączy z fake’owym Access Pointem.
+	Atak polega na \textbf{podsłuchiwaniu transmisji nieszyfrowanych}, dzięki czemu możliwe jest uzyskanie danyh takich jak login czy hasło do różnych systemów komputerowych, co pozwala na podszywanie się pod atakującą osobę. Aby dokonać ataku wystarczy oprogramowanie pozwalajace na to (np. Whireshark) lub odpowiendio skonfigurowana karta sieciowa. \\
+	
+	Aby uchronić się przed tym atakiem można skonfigurować sieć, aby wymuszała szyfrowanie danych, nawiązywanie komunikacji w wyższych warstwach sieci w sposób szyfrowany np. TLS 1.1, SSL. \\
 
-W celu ochrony należy łączyć się tylko ze sprawdzonymi sieciami, wykorzystywać zabezpieczoną komunikację, oraz wyłączać WiFi w telefonie, gdy go nie używamy.
+	\item \textbf{Evil Twin/ Caffe-Latte}
 
-\subsubsection{Spoofing MAC}
+	Atak polega na \textbf{podstawieniu urządzenia} (np. WiFi Pineapple) , które symuluje Access Point. W przypadku, gdy urządzenie zacznie wygłaszać mocniejszy sygnał od prawdziwego nastąpi przełączenie bez informowania użytkownika. Dzięki temu cały ruch z komputera będzie przechodził przez fałszywy Access Point, co daje możliwość łatwego przechwycenia danych. \\
+	
+	W celu ochrony należy łączyć się tylko ze sprawdzonymi sieciami, wykorzystywać zabezpieczoną komunikację, oraz wyłączać WiFi w telefonie, gdy go nie używamy. \\
 
-Jedną z metod zabezpieczenia dostępów do sieci bezprzewodowej jest weryfikacja urządzeń po adresie fizycznym karty sieciowej MAC. Jednak podsłuchiwanie transmisji w sieciach bezprzewodowych jest stosunkowo proste, dlatego jest możliwość odczytania adresów MAC urządzeń, które mają dostęp do danych zasobów, a następnie podmienienie własnego adresu fizycznego MAC na jeden z nich.
+	\item \textbf{Spoofing MAC}
 
-Aby uchronić się przed tym atakiem należy oprócz weryfikacji adresów MAC używać zabezpieczeń hasłem lub nadawanie dostępu do zasobów dla użytkowników z dostępem do lokalnej sieci.
+	Jedną z metod zabezpieczenia dostępów do sieci bezprzewodowej jest weryfikacja urządzeń po adresie fizycznym karty sieciowej MAC. Jednak podsłuchiwanie transmisji w sieciach bezprzewodowych jest stosunkowo proste, dlatego jest możliwość odczytania adresów MAC urządzeń, które mają dostęp do danych zasobów, a następnie podmienienie własnego adresu fizycznego MAC na jeden z nich. \\
+	
+	Aby uchronić się przed tym atakiem należy oprócz weryfikacji adresów MAC używać zabezpieczeń hasłem lub nadawanie dostępu do zasobów dla użytkowników z dostępem do lokalnej sieci.
 
-\subsubsection{Złamanie zabezpieczeń WEP i WPA}
+	\item \textbf{Złamanie zabezpieczeń WEP i WPA}
 
-Zabezpieczenia za pomocą WEP i WPA są mało bezpieczne, przy odpowiednim ataku możliwe jest zgadnięcie w ciągu kilkunastu/kilkudziesięciu minut (np. za pomocą narzędzia AirSnort). Dlatego należy używać lepszych zabezpieczeń - najskuteczniejszym obecnie szyfrowaniem jest WPA2, które używa algorytmu Advanced Encryption Standard (AES).
+	Zabezpieczenia za pomocą WEP i WPA są mało bezpieczne(RC4), przy odpowiednim ataku możliwe jest złamanie w ciągu kilkunastu/kilkudziesięciu minut (np. za pomocą narzędzia AirSnort). Dlatego należy używać lepszych zabezpieczeń - najskuteczniejszym obecnie szyfrowaniem jest \textbf{WPA2}, które używa algorytmu \textbf{Advanced Encryption Standard}(\textit{AES}). \\
 
-\subsubsection{Modyfikowanie pakietów}
+	\item \textbf{Przechwytywanie sygnału bluetooth}
 
-W przypadku przechwycenia transmisji możliwe staje się zmodyfikowanie adresów, z którego została wysłana wiadomość, przez co możliwe staje się przechwycenie odpowiedzi serwera. Aby zabezpieczyć się przed modyfikowaniem pakietów konieczne jest zapewnienie integralności pakietów i jej weryfikacja.
+	Bluejacking – wysyłanie niechcianych wiadomości przy pomocy modułu Bluetooth do urządzeń umożliwiających ich odbiór. Najłatwiejszym i najpewniejszym zabezpieczeniem się przed atakami jest wyłączenie modułu Bluetooth. Ryzyko zmniejsza także wyłączenia trybu odszukiwania (parowania) urządzeń Bluetooth, oraz ustawienie zapytania przed odbiorem informacji za pośrednictwem modułu Bluetooth. Istnieje wiele rodzajów tego ataku, które pozwalają na wydobywanie poufnych informacji z telefonu np. SMS'ów. \\
 
-\subsubsection{Przechwytywanie sygnału bluetooth}
+	\item \textbf{Ataki DOS}
 
-Temat dotyczy komunikacji bezprzewodowej, więc również bluetooth.
+	Blokada usług (ang. Denial of Service, \textbf{DoS}) – atak mający na celu uniemożliwienia działania. Atak polega zwykle na przeciążeniu aplikacji serwującej określone dane czy obsługującej danych klientów. W sieciach komputerowych atak DoS oznacza zwykle zalewanie sieci (ang. flooding) nadmiarową ilością danych mających na celu wysycenie dostępnego pasma, którym dysponuje atakowany host. Niemożliwe staje się wtedy osiągnięcie go, mimo że usługi pracujące na nim są gotowe do przyjmowania połączeń.\\
 
-Problem dotyczy klawiatur bezprzewodowych. Atakujący może dysponować urządzeniem, które będzie przechwytywało wciśnięte przez użytkownika przyciski, co po odpowiedniej analizie pozwoli na wyodrębnienie loginów i haseł.
-
-Problemy z bezpieczeństwem RFID - można łatwo zczytać kartę, sklonować ją.
+\end{itemize}
