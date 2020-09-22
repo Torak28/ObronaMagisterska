@@ -1,30 +1,89 @@
 \subsection{Metody i narzędzia wykorzystywane w opisywaniu procesów biznesowych}
 
-W zagadnieniach związanych z opisywaniem procesów biznesowych, wykorzystywane są różne rodzaje podstawowych procesów zarządzania, określone w \textit{Podnoszenie efektywności organizacji}:
+Proces biznesowy lub metoda biznesowa jest to seria powiązanych ze sobą działań lub zadań, które
+rozwiązują określony problem lub prowadzą do osiągnięcia określonego efektu.
+
+\subsubsection{Rodzaje procesów biznesowych}
+
+Rodzaje procesów biznesowych:
 
 \begin{itemize}
-	\item \textbf{Ogólne procesy podstawowe} (np. zakładanie nowego biznesu, przygotowanie i wprowadzenie nowego produktu, produkcja, obsługa pogwarancyjna),
-	\item \textbf{Procesy podstawowe specyficzne dla branży} (np. załatwianie wniosku kredytowego, rozpatrzenie wniosku o odszkodowanie, stworzenie programu),
-	\item \textbf{Ogólne procesy wspierające} (np. formalne planowanie strategiczne i taktyczne, budżetowanie, rekrutacja, szkolenie),
-	\item \textbf{Ogólne procesy zarządzania} (np. planowanie strategiczne i taktyczne, ustalanie celów, alokacja zasobów).
+	\item \textbf{Proces zarządczy} – proces kierujący działaniem systemu (proces zarządzania przedsiębiorstwem)
+	\item \textbf{Proces operacyjny} – stanowi istotę biznesu i jest źródłem wartości dodanej (zaopatrzenie, produkcja, marketing, sprzedaż)
+	\item \textbf{Proces pomocniczy} – wspiera procesy główne (księgowość, rekrutacja, wsparcie techniczne) \\
 \end{itemize}
 
-W zależności od specyfiki organizacji i branży, wybrać można różne technologie pozwalające na zarządzanie procesami biznesowymi.
+W zależności od specyfiki organizacji i branży, wybrać można różne technologie pozwalające na zarządzanie procesami biznesowymi.
+
+\subsubsection{Notacje opisu procesów biznesowych}
+
+Wyróżnia się dwie najpopularniejsze notacje::
+
+\begin{itemize}
+	\item \textbf{BPMN} (\textit{Bussines Process Modeling Notation}) - jest to graficzna notacja służąca do przedstawiania i opisywania procesów biznesowych. Elementy graficzne i zasady ich używania przy tworzeniu diagramów są na tyle przejrzyste i nieskomplikowane, że zarówno specjaliści techniczni jak i przedstawiciele biznesu mogą odnaleźć dzięki niej wspólny język. 
+	\item \textbf{UML} (\textit{Unified Modeling Language}) - język formalny do modelowania różnego rodzaju systemów oraz
+	specyfikowania ich elementów. \\
+\end{itemize}
 
 \subsubsection{BPMN - Business Process Modelling Notation}
 
-Graficzny język wizualizacji, specyfikowania, tworzenia i dokumentowania procesów biznesowych. Służy do opisu procesów na potrzeby systemów ERP (zarządzanie zasobami w przedsiębiorstwach) oraz WorkFlow (obieg pracy, dokumentów). Celem BPMN jest wymiana procesów biznesowych na poziomie ludzi zamiast poziomu technicznego. Wspiera proste i złożone procesy, oraz prostą wymianę komunikacji między użytkownikami - podstawą są diagramy procesów biznesowych. BPMN tworzy most między notacją pojęciową i techniczną - przekształca pomysł na kod (np. język BPL). Proces biznesowy w BPMN to zaplanowany proces (zbiór wzajemnie powiązanych działań, które przekształcają elementy wejściowe na wyjściowe) nastawiony na uzyskiwanie określonych rezultatów. BPMN koncentruje się na sekwencji procesu z trzema rodzajami podprocesów:
+Graficzny język wizualizacji, specyfikowania, tworzenia i dokumentowania procesów biznesowych. Służy do opisu procesów na potrzeby systemów \textbf{ERP} (zarządzanie zasobami w przedsiębiorstwach) oraz \textbf{WorkFlow} (obieg pracy, dokumentów). Celem BPMN jest \textbf{wymiana procesów biznesowych na poziomie ludzi zamiast poziomu technicznego}. Wspiera proste i złożone procesy, oraz prostą wymianę komunikacji między użytkownikami - podstawą są diagramy procesów biznesowych. BPMN tworzy most między notacją pojęciową i techniczną - przekształca pomysł na kod (np. język BPL). Proces biznesowy w BPMN to zaplanowany proces (zbiór wzajemnie powiązanych działań, które przekształcają elementy wejściowe na wyjściowe) nastawiony na uzyskiwanie określonych rezultatów. \\
+
+BPMN koncentruje się na sekwencji procesu z trzema rodzajami podprocesów:
 
 \begin{itemize}
 	\item \textbf{Prywatne} (Wewnętrzne procesy biznesowe) - Wykonywane są wewnątrz jednostki organizacyjnej (w ogólnych przepływach pracy procesów BPM),
 	\item \textbf{Publiczne} (Abstrakcyjne procesy)- ilustrują interakcję między wewnętrznymi procesami a zewnętrznymi partnerami biznesowymi (wskazując sekwencję interakcji/wiadomości wewnętrznego procesu z zewnętrznymi użytkownikami). Ponadto przedstawiane są tylko czynności obejmujące zewnętrzną komunikację (wskazując przepływ sterowania),
-	\item \textbf{Globalne} (Procesy współpracy) - ilustrują interakcje między dwoma lub więcej partnerami biznesowymi. Sekwencja czynności pokazuje wymianę wiadomości między jednostkami.
+	\item \textbf{Globalne} (Procesy współpracy) - ilustrują interakcje między dwoma lub więcej partnerami biznesowymi. Sekwencja czynności pokazuje wymianę wiadomości między jednostkami. \\
 \end{itemize}
 
-\subsubsection{BPEL - Business Process Execution Language for Web Services}
+Wykorzystywana w BPMN służy jedynie do modelowania procesów biznesowych. Dzieli się ona na 4 kategorie:
 
-Język zorientowany na procesy i wykonanie takiego zapisu w specjalizowanym silniku. Został opracowany m.in. przez IBM i Microsoft. Jest to przede wszystkim język do definiowania procesów biznesowych w usługach sieciowych. BPEL zawiera zarówno warstwę abstrakcyjną (definiowane są w niej parametry i ograniczenia), jak i warstwę niskiego poziomu (definiowane są w niej wykonywalne procesy). Najpopularniejsze implementacje tego języka to Microsoft BizTalk oraz JBoss jBPM.
+\begin{itemize}
+	\item \textbf{Elementy przepływu} - podstawa diagramu procesów biznesowych. Wśród nich wyróżnić
+	można trzy podzbiory:
+	\begin{itemize}
+		\item \textbf{Zdarzenia} - prezentacja wydarzeń, które wystąpią lub mogą wystąpić w trakcie wykonywania procesu. Wpływają na przebieg procesu i ich wystąpienie jest czymś spowodowane lub powoduje skutek.
+		\item \textbf{Bramki} - są elementami pozwalającymi na kontrolę przebiegu procesu, jego rozgałęzień i połączeń. Utożsamiać je można z elementami decyzyjnymi.
+		\item \textbf{Czynności} - Czynność jest ogólnym pojęciem określającym pracę, którą uczestnik procesu wykonuje. 
+	\end{itemize}
+	\item \textbf{Połączenia}  - zawierają elementy pozwalające na zaprezentowanie związku pomiędzy elementami na diagramie, niezależnie czy jest to prezentacja przepływu, czy użycia danego elementu przez inny na diagramie. Wyróżnia się trzy podzbiory tej kategorii:
+	\begin{itemize}
+		\item Przepływy \textbf{sekwencji} - używane są do pokazania kolejności, w jakiej Czynności będą wykonywane w ramach procesu.
+		\item Przepływy \textbf{komunikatów} - używane są do pokazania wymiany komunikatów pomiędzy odrębnymi uczestnikami procesu.
+		\item \textbf{Asocjacje} - służą do dołączania dodatkowych informacji do Elementów Przepływu. Strzałka na końcu Asocjacji wskazuje kierunek powiązania.
+	\end{itemize}
+	\item Kategoria \textbf{Miejsca} realizacji zawiera elementy pozwalające na grupowanie obiektów procesu biznesowego zgodnie z ich przynależnością do osoby, roli bądź jednostki organizacyjnej.
+	\item Kategoria \textbf{Artefakty} zawiera elementy pozwalające na zapewnienie dodatkowych informacji o modelowanym procesie. Nie są one bezpośrednio związane z przebiegiem procesu, lub przebiegiem informacji. Wyróżnia się trzy elementy tej kategorii:
+	\begin{itemize}
+		\item \textbf{Obiekty danych} mogą być dołączane do Przepływów, ale nie mają wpływu na ich przebieg. Mogą zawierać informacje o tym, czego dana Czynność wymaga, aby mogła zostać wykonana lub co dana Czynność produkuje.
+		\item \textbf{Grupy} służą do łączenia elementów diagramu i prezentowania pewnego ich związku. Grupa nie ma wpływu na Przepływy pomiędzy Czynnościami.
+		\item \textbf{Adnotacje} są sposobem pozwalającym modelującemu na dołączenie do elementów diagramu dodatkowych informacji dla jego odbiorcy.\\
+	\end{itemize}
+\end{itemize}
 
-\subsubsection{BPML - Business Process Management Language}
+\underline{\textbf{Microsoft Visio}}
 
-Konkurent dla BPEL, opracowany przez Business Process Management Initiative. Pozwala na automatyczne tłumaczenie postaci graficznej do kodu konkurencyjnego języka BPEL. Pod względem działania nie różni się znacząco od BPEL, jest jednak mniej popularny ze względu na brak tak szerokiego wsparcia jak BPEL
+\subsubsection{UML}
+
+UML to notacja umożliwiająca zaprezentowanie systemu w sposób graficzny, w postaci diagramów. Modele zapisane w języku UML prezentują system od ogółu do szczegółu, umożliwiając oglądanie modelu systemu z wybraną w danym momencie szczegółowością. \\
+
+Najważniejsze diagramy UML:
+
+\begin{itemize}
+	\item \textbf{Przypadków użycia} - diagram ten jest agregatem funkcji usług, które wykonuje system.
+	\begin{itemize}
+		\item \textbf{Przypadek użycia}
+		\item \textbf{Aktor}
+		\item \textbf{Relacja}
+	\end{itemize}
+	\item \textbf{Diagram klas} - obrazuje pewien zbiór klas, interfejsów i kooperacji oraz związki między nimi. Jest on grafem złożonym z wierzchołków (klas, interfejsów, kooperacji) i łuków (reprezentowanych przez relacje). Diagram klas stanowi opis statyki systemu, który uwypukla związki między klasami, pomijając pozostałe charakterystyki. 
+	\item \textbf{Diagram sekwencji} służy do prezentowania interakcji pomiędzy obiektami wraz z uwzględnieniem w czasie komunikatów, jakie są przesyłane pomiędzy nimi. 
+	\begin{itemize}
+		\item \textbf{Uczestnik/klasa/obiekt}
+		\item \textbf{Linia życia}
+		\item \textbf{Komunikat} \\
+	\end{itemize}
+\end{itemize}
+
+\underline{\textbf{UMLet}}
