@@ -1,18 +1,26 @@
 \subsection{Zastosowania, zasady budowy i funkcjonowania cyfrowych asystentów}
 
-Najpierw trzeba przedstawić czym jest asystent cyfrowy. \textbf{Cyfrowy asystent}(\textit{Digital assistant}) lub asystent wirtualny to program który może wykonywać zadania lub usługi na podstawie komend lub pytań otrzymanych od osoby jego wykorzystującej. Czasami termin „chatbot” również jest używany w odniesieniu do wirtualnych asystentów. «Chatbot» to asystent komunikacja z którym jest możliwa tylko przez komendy tekstowe, chat online, bez użycia komunikacji głosowej. \\
+\subsubsection{Definicja}
+
+\textbf{Cyfrowy asystent}(\textit{Digital assistant}) lub asystent wirtualny to program który może wykonywać zadania lub usługi na podstawie komend lub pytań otrzymanych od osoby jego wykorzystującej. Czasami termin \textbf{chatbot} również jest używany w odniesieniu do wirtualnych asystentów. \textit{Chatbot} to asystent komunikacja z którym jest możliwa tylko przez komendy tekstowe, chat online, bez użycia komunikacji głosowej. \\
+
+\subsubsection{Budowa}
 
 Zasady budowy i funkcjonowania Każdy asystent wirtualny składa się z trzech podstawowych elementów: 
 
 \begin{itemize}
-	\item Aplikacja lub strona internetowa za pomocą której klient będzie komunikować z asystentem. 
-	\item Moduł odpowiadający za przetwarzanie języka naturalnego ( NLP model ). 
-	\item Moduł który wykonuje otrzymaną komendę lub łączy asystenta z serwisami które w stanie przekazać odpowiedz na otrzymane pytanie od użytkownika. 
+	\item \textbf{Aplikacja} lub strona internetowa za pomocą której klient będzie komunikować z asystentem. 
+	\item Moduł odpowiadający za przetwarzanie języka naturalnego ( NLP model ). \textbf{Speach2Text}
+	\item Moduł który wykonuje otrzymaną komendę lub łączy asystenta z serwisami które w stanie przekazać odpowiedz na otrzymane pytanie od użytkownika. \textbf{Text2Speach} \\
 \end{itemize}
 
-Pierwszy element czyli aplikacja lub strona internetowa, najcześciej przedstawia sobą tylko interfejs dla zadania pytana lub wyświetlenia odpowiedzi i komunikacji z serwerem na którym umieszczone są inne elementy takiego systemu. Dodatkowo taka aplikacja może posiadać komendę podstawową dla aktywacji asystenta, na przykład «Ok Google» czy « Hej Siri». Taka komenda rozpoznawana jest lokalnie w bardzo uproszczonym modelu «Speech to text». Model jest uproszony przez to że pełne modeli rozpoznawania głosu i przetwarzania języka naturalnego wymagają nie malej mocy obliczeniowej często niedostępnej w urządzeniach na których asystent jest zainstalowany. \\
+\subsubsection{Aplikacja}
 
-Drugiem elementem takiego systemu, jest moduł przetwarzania języka naturalnego, czyli moduł NLP. NLP to dziedzina, łącząca zagadnienia sztucznej inteligencji i językoznawstwa, zajmująca się automatyzacją analizy, rozumienia, tłumaczenia i generowania języka naturalnego przez komputer. Przetwarzanie języka naturalnego obejmuje wiele różnych technik interpretacji języka ludzkiego od metod statystycznych do uczenia maszynowego. Zadaniem NLP jest rozbicie języka na krótsze, elementarne kawałki i zrozumienie relacji między nimi. \\
+\textbf{Pierwszy element} czyli \textbf{aplikacja} lub strona internetowa, najcześciej przedstawia sobą tylko interfejs dla zadania pytana lub wyświetlenia odpowiedzi i komunikacji z serwerem na którym umieszczone są inne elementy takiego systemu. Dodatkowo taka aplikacja może posiadać komendę podstawową dla aktywacji asystenta, na przykład \textit{Ok Google} czy \textit{Hej Siri}. Taka komenda rozpoznawana jest lokalnie w bardzo uproszczonym modelu Speech to text. Model jest uproszony przez to że pełne modeli rozpoznawania głosu i przetwarzania języka naturalnego wymagają nie malej mocy obliczeniowej często niedostępnej w urządzeniach na których asystent jest zainstalowany. \\
+
+\subsubsection{System NLP}
+
+\textbf{Drugiem elementem} takiego systemu, jest moduł przetwarzania języka naturalnego, czyli moduł \textbf{NLP}. NLP to dziedzina, łącząca zagadnienia sztucznej inteligencji i językoznawstwa, zajmująca się automatyzacją analizy, rozumienia, tłumaczenia i generowania języka naturalnego przez komputer. Przetwarzanie języka naturalnego obejmuje wiele różnych technik interpretacji języka ludzkiego od metod statystycznych do uczenia maszynowego. Zadaniem NLP jest rozbicie języka na krótsze, elementarne kawałki i zrozumienie relacji między nimi. \\
 
 Głównym zadaniem NLP w cyfrowych asystentach jest przetworzenie pytań lub komend użytkownika w postać oczyszczoną. Oczyszczanie tekstu składa się z 4 głównych elementów:
 
@@ -48,7 +56,9 @@ Oczywiście niektóre elementy można zastąpić za pomocą głębokich sieci ne
 
 Aby uzyskać end to end ASR ( automatic speech recognition ) trzeba zamienić jak najwięcej części tradycyjnej HMM siecią neuronową. \\
 
-Ostatni moduł najczęściej wyszukuje odpowiedz na pytanie w bazie wiedzy asystenta lub prosi zewnętrzne serwisy na udostępnię odpowiedzi na podane pytanie. \\
+\subsubsection{Komunikacja na zewnątrz}
+
+\textbf{Ostatni moduł} najczęściej wyszukuje odpowiedz na pytanie w bazie wiedzy asystenta lub prosi zewnętrzne serwisy na udostępnię odpowiedzi na podane pytanie. \\
 
 \subsubsection{Zastosowania}
 
@@ -57,7 +67,7 @@ Można wyróżnić kilka zastosowań asystentów cyfrowych:
 \begin{itemize}
 	\item \textbf{Obywatelskie} 
 	\item \textbf{Wojskowe} 
-	\item \textbf{Medyczne} 
+	\item \textbf{Medyczne} \\
 \end{itemize}
 
 \textbf{Obywatelski}: 
