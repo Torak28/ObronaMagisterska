@@ -1,5 +1,7 @@
 \subsection{Techniki prezentacji danych w aplikacjach webowych}
 
+Eksploracyjna Analiza Danych (\textbf{EDA} – \textit{Exploratory Data Analysis}) wykorzystuje różnego rodzaju techniki (przede wszystkim graficzne) w celu: odkrycia istotnych zmiennych, szumu danych, struktury danych, przetestowania podstawowych założeń. Jednak nie chodzi tylko o zbiór technik. EDA przede wszystkim oznacza inne podejście do analizy danych.
+
 \subsubsection{Wykresy jednej zmiennej}
 
 Są to metody, które pozwalają na wizualizację jednej cechy (dwóch licząc uwzględnienie klasy na wykresie np. przez kolor). Dzięki nim możemy obejrzeć rozkład cechy, wartości średnie, odchylenie standardowe itp.. Zaliczamy do nich m.in. wykresy pudełkowe oraz histogramy. Histogramy są narzędziem, dzięki któremu możemy graficznie odtworzyć rozkład danej cechy. Poza tym pozwalają one również dostrzec rozpiętość, skośność oraz szum danych. Często podczas tworzenia histogramów wprowadza się podział na klasy.
@@ -15,7 +17,7 @@ Do tej grupy zaliczamy metody, które pozwalają pokazać jednocześnie dwie wsp
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\linewidth]{S5_1.png}
+	\includegraphics[width=0.3\linewidth]{S5_1.png}
 \end{figure}
 
 Drugą metodą pozwalającą jednoczesne pokazanie dwóch cech są, wcześniej wymienione, histogramy dwuwymiarowe
@@ -44,3 +46,28 @@ Ta grupa składa się tylko z jednej metody czyli wykresów gwiazdowych (ang. st
 	\centering
 	\includegraphics[width=0.3\linewidth]{S5_4.png}
 \end{figure}
+
+\subsubsection{WebGL}
+
+Programy pisane w OpenGlu można sprowadzić do poniższej postaci:
+
+\begin{lstlisting}
+	int main(void) {
+	
+		startup();
+		
+		while(True){
+			render();
+		}
+		
+		shutdown();
+	}
+\end{lstlisting}
+
+\subsubsection{p5JS}
+
+Wrapper JSowy na WebGLa
+
+\subsubsection{Unity3D}
+
+Wsparcie dla przeglądarek out of the box.
