@@ -9,7 +9,8 @@ W ostatnich latach nastąpił dynamiczny rozwój głębokich sieci neuronowych �
 Odmianą głębokich sieci neuronowych służącą do analizy obrazu są splotowe (konwolucyjne) sieci neuronowe. Typowa splotowa sieć neuronowa składa się z kombinacji 3 podstawowych typów warstw: 
 \begin{itemize}	
 	\item warstwa splotowa(konwolucyjna), 
-	\item warstwa redukująca rozmiar (pooling). \\
+	\item warstwa redukująca rozmiar (pooling). 
+	\item warstwa aktywacji \\
 \end{itemize}	
 
 Dodatkowo wykorzystuję się klasyczne warstwy neuronowe tzw. warstwy pełnego połączenia. Splotowa sieć neuronowa przyjmuje na wejście obraz, który następnie jest przetwarzany przez kolejne warstwy. Warstwa splotowa wykonuje wielokrotnie operację splotu dyskretnego na obrazie wejściowym tworząc na wyjściu mapy cech. Operacja splotu dyskretnego w obszarach analizy obrazu wykorzystywana jest do filtracji. Następnie, przefiltrowane obrazy trafiają na nieliniową funkcję aktywacji, która przetwarza każdy piksel. Dodatkowo, po niektórych warstwach aktywacji umieszczona jest warstwa redukująca rozmiar, która zmniejsza liczbę pikseli w przetwarzanych obrazach. Wyjście ostatniej warstwy splotowej trafia na klasyczną sieć neuronową. \\
