@@ -1,15 +1,31 @@
 \subsection{Charakterystyka wybranych zjawisk i procesów w kontekście ich symulacji komputerowej}
 
-Symulacja w świecie cyfrowym to kopiowanie działania jakiegoś systemu lub jego części. Precyzyjniej „symulację komputerową” można nazwać sposobem numerycznym stosowanym do przeprowadzania eksperymentów na konkretnych typach modeli matematycznych, które charakteryzują się użyciem maszyny cyfrowej pracę złożonego systemu w dłuższym okresie. Symulacje spotykamy w naszym życiu codziennym I nie zwracamy już na nie uwagi. Oczywistym przykładem są prognozy pogody, w których to, dzięki tysiącom, a nie rzadko milionom obliczeń symulujemy zachowania pogody, w konsekwencji czego czerpiemy z nich istotne dla nas informacje, tj. Przewidywaną temperaturę czy też pojawienie się niekorzystnego zjawiska atmosferycznego. Symulacja służy nam również do badania procesów, których nie możemy wykonać „na żywo” przykładami są tutaj testy różnych reakcji jądrowych, czy też zachowanie się różnych ciał niebieskich przy różnych współczynnikach je kształtujących. Symulacje stały się nieodzownym elementem badań I ich przebieg jest często bardzo zbliżony:
+\centerline{\textbf{Symulacja – uczynić podobnym}}
 
 \begin{itemize}
-	\item Wytyczenie problemu,
-	\item Wytworzenie modelu matematycznego,
-	\item Ustalenie programu dla komputera,
-	\item Kontrola bezbłędności systemu,
-	\item Zorganizowanie badań symulacyjnych,
-	\item Przeprowadzenie przebiegu symulacji i weryfikacja wyników.
+	\item \textbf{Artystyczna}(ruch definiowany przez Animatora),
+	\item \textbf{Sterowana przez Dane}(mo-cap),
+	\item \textbf{Proceduralna}(zadany model obliczeniowy)
 \end{itemize}
+
+\subsubsection{Definicja}
+
+Symulacja w świecie cyfrowym to \textbf{kopiowanie działania jakiegoś systemu lub jego części}. Precyzyjniej „symulację komputerową” można nazwać sposobem numerycznym stosowanym do przeprowadzania eksperymentów na konkretnych typach modeli matematycznych, które charakteryzują się użyciem maszyny cyfrowej w dłuższym okresie. \\
+
+Oczywistym przykładem są \textbf{prognozy pogody}, w których to, dzięki tysiącom, a nie rzadko milionom obliczeń symulujemy zachowania pogody, w konsekwencji czego czerpiemy z nich istotne dla nas informacje, tj. Przewidywaną temperaturę czy też pojawienie się niekorzystnego zjawiska atmosferycznego. Symulacja służy nam również do badania procesów, których nie możemy wykonać „na żywo” przykładami są tutaj testy różnych reakcji jądrowych, czy też zachowanie się różnych ciał niebieskich przy różnych współczynnikach je kształtujących. \\
+
+Symulacje stały się nieodzownym elementem badań I ich przebieg jest często bardzo zbliżony:
+
+\begin{itemize}
+	\item \textbf{Wytyczenie problemu},
+	\item \textbf{Wytworzenie modelu matematycznego},
+	\item \textbf{Ustalenie programu} dla komputera,
+	\item \textbf{Kontrola bezbłędności systemu},
+	\item \textbf{Zorganizowanie badań symulacyjnych},
+	\item \textbf{Przeprowadzenie przebiegu symulacji} i \textbf{weryfikacja} wyników. \\
+\end{itemize}
+
+\subsubsection{Klasyfikacja}
 
 Symulacje komputerowe dzielą się pod kątem:
 
@@ -38,7 +54,7 @@ Symulacje komputerowe dzielą się pod kątem:
 	\item \textbf{Programowania agentowego} - jest to specjalna forma symulacji dyskretnych, nieopierających się na danym modelu, lecz możliwa do przedstawienia. \\
 \end{itemize}
 
-Symulacja komputerowa znalazła również swoje zastosowania w świecie finansów. Banki dzięki zbieraniu danych historycznych oraz biorąc pod uwagę aktualne czynniki  gospodarcze, szybko są w stanie wykreować nasz profil inwestora, czy też klienta. Niewątpliwie symulacje giełdowe cieszą się największym zainteresowaniem I nad nimi są prowadzone największe badania w tym sektorze, ponieważ potencjalne zyski jakie mogą przyjść wraz z symulowaniem przyszłości są ogromne. Niestety symulowanie układów otwartych jakim jest nasz świat jest niezwykle ciężkie I zasobożerne, dlatego nie mamy jeszcze komputerów, które przewidują ze sporą dokładnością wahania rynkowe. Zwyczajnie czynników, które wpływają na owe wahania jest zbyt wiele. Warto znów tutaj wrócić, do prognoz pogody, które jak sami widzimy najczęściej sprawdzają się jedynie dzień wprzód, zaś każdy następny dzień zmniejsza prawdopodobieństwa prawdziwego przewidzenia pogody. \\
+\subsubsection{Rozrywka}
 
 Symulacje znalazły zastosowanie również w świecie rozrywkowym I to nimi właśnie zajmowaliśmy się głównie na kursie Analiza I Symulacje w zeszłym roku. Tutaj skupiamy się głównie na symulacjach ruchu. Na wykładzie przedstawiono nam 3 rodzaje animowania ruchu:
 
@@ -48,17 +64,14 @@ Symulacje znalazły zastosowanie również w świecie rozrywkowym I to nimi wła
 	\item symulowanie na procesorze/karcie graficznej. \\
 \end{itemize}
 
-W pierwszym podejściu musimy jasno pokazywać gdzie dany obiekt musi się znaleźć w kolejnych momentach trwania animacji, a tranzycję (przejścia) pomiędzy wytyczonymi punktami można przeprowadzić, posiłkując się metodami interpolacji (kilka omówiliśmy na wykładzie). Problemem jest tutaj jednak dobór kroku czasowego, aby zachować odpowiednią dynamikę ruchu – tutaj najczęściej posługujemy się całkami, aby wyznaczyć przybliżone tory ruchu. \\
+W pierwszym podejściu musimy jasno pokazywać \textbf{gdzie dany obiekt musi się znaleźć w kolejnych momentach trwania animacji}, a tranzycję (przejścia) pomiędzy wytyczonymi punktami można przeprowadzić, posiłkując się metodami interpolacji (kilka omówiliśmy na wykładzie). Problemem jest tutaj jednak dobór kroku czasowego, aby zachować odpowiednią dynamikę ruchu – tutaj najczęściej posługujemy się całkami, aby wyznaczyć przybliżone tory ruchu. \\
 
-Drugą metodą przeniesienia ruchu do komputera są systemy motion capture. Ta technika, pomimo że się wydaje najdokładniejsza, ponieważ od razu rozwiązuje problem płynnych przejść pomiędzy scenami, to ma swoje wady. Największą wadą jest to, że kolejne elementy kostiumu motion capture muszą być przyczepione do bohatera, a nie do jego odzieże, w konsekwencji możemy mówić, że animacje skąpo ubranych bohaterów będą dobre I zbliżone do rzeczywistości, jednak już osoba ubrana w długi płaszcz będzie wyglądać nienaturalnie, ponieważ dodanie płaszcza jest sztuczne I pomimo, iż wydaje się to błachostką symulacja zachowania płaszcza w reakcji na poszczególne ruchy swojego właściciela jest czasami nienaturalna, szczególnie widoczne jest to w świecie gier komputerowych.\\
+Drugą metodą przeniesienia ruchu do komputera są \textbf{systemy motion capture}. Ta technika, pomimo że się wydaje najdokładniejsza, ponieważ od razu rozwiązuje problem płynnych przejść pomiędzy scenami, to ma swoje wady. Największą wadą jest to, że kolejne elementy kostiumu motion capture muszą być przyczepione do bohatera, a nie do jego odzieże, w konsekwencji możemy mówić, że animacje skąpo ubranych bohaterów będą dobre I zbliżone do rzeczywistości, jednak już osoba ubrana w długi płaszcz będzie wyglądać nienaturalnie, ponieważ dodanie płaszcza jest sztuczne I pomimo, iż wydaje się to błachostką symulacja zachowania płaszcza w reakcji na poszczególne ruchy swojego właściciela jest czasami nienaturalna, szczególnie widoczne jest to w świecie gier komputerowych.\\
 
-Ostatnim podejściem do animacji to zrzucenie wszystkiego na barki procesora i – jeśli to możliwe – opisanie jakiegoś procesu modelem fizycznym i numeryczne rozwiązywanie go. Podejście dobre lecz wymaga optymalizacji tz. Jak dokładna ma być nasza symulacja. \\
-
-Można jeszcze dopowiedzieć o metodach numerycznych wykorzystywanych do uproszczenia równać ruchów, czy też ich znajdowania w ogóle.
-Całkowanie numeryczne metody:
+Ostatnim podejściem do animacji to zrzucenie wszystkiego na barki procesora i – jeśli to możliwe – opisanie jakiegoś procesu \textbf{modelem fizycznym i numeryczne rozwiązywanie g}o. Podejście dobre lecz wymaga optymalizacji tz. Jak dokładna ma być nasza symulacja. \\
 
 \begin{itemize}
-	\item prostokątów - najprostrza I najmniej zasobożerna, ale nie najlepsza
-	\item trapezów – ta już dokładniej przybliży krzywe całki I chyba jest najczęściej wykorzystywana
-	\item parabol Simsona \\
+	\item \textbf{zjawisko względności} - ruch sceny a nie elementu,
+	\item \textbf{efekt paralaksy} - obiekty dalej od nas wydają się przesuwać wolniej, niż te na pierwszym planie,
+	\item \textbf{efekty cząsteczkowe} – tak symuluje się dym i ogień.
 \end{itemize}
