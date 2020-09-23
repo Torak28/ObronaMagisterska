@@ -2,7 +2,7 @@
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\linewidth]{S9.png}
+	\includegraphics[width=0.9\linewidth]{S9.png}
 \end{figure}
 
 Architektury, warstwy” wykorzystywane w przetwarzaniu danych w takich systemach to:
@@ -18,34 +18,34 @@ Architektury, warstwy” wykorzystywane w przetwarzaniu danych w takich systemac
 
 Zazwyczaj urządzenia IoT mają małą moc obliczeniową i niewielką ilość pamięci, z tego powodu rozwiązania chmurowe są bardzo popularne, ponieważ zapewniają skalowalne zasoby do przetwarzania i przechowywania danych na żądanie. Dane z sensorów są transportowane do centrum obliczeniowego, gdzie są przetwarzane, a wynik jest przesyłany do zasubskrybowanych aplikacji. Ponadto centra obliczeniowe mogą przechowywać dane w celu analizy i wydobycia z nich wiedzy. \\
 
-Zalety chmury obliczeniowej to:
+\textbf{Zalety} chmury obliczeniowej to:
 
 \begin{itemize}
-	\item brak konieczności utrzymywania własnej infrastruktury obliczeniowej.
-	\item możliwość szybkiej realizacji projektów i testowania koncepcji bez dużych zakupów IT i dużych kosztów początkowych (płaci się tylko za zużyte zasoby).
-	\item jeżeli dane wysyłane/odczytywane są rzadko to wykorzystanie rozwiązań chmurowych jest tańsze, bo nie trzeba pozostawiać w stanie bezczynności dedykowanego sprzętu i oprogramowania.
-	\item duża wydajność, elastyczność, skalowalność
+	\item \textbf{brak konieczności utrzymywania własnej infrastruktury obliczeniowej}.
+	\item możliwość \textbf{szybkiej realizacji projektów} i testowania koncepcji bez dużych zakupów IT i dużych kosztów początkowych (płaci się tylko za zużyte zasoby).
+	\item jeżeli dane wysyłane/odczytywane są rzadko to \textbf{wykorzystanie rozwiązań chmurowych jest tańsze}, bo nie trzeba pozostawiać w stanie bezczynności dedykowanego sprzętu i oprogramowania.
+	\item \textbf{duża wydajność, elastyczność, skalowalność}
 	\item niezawodność przy założeniu stabilnego połączenia
 	\item łatwość w wykorzystaniu tych samych danych przez wiele grup/aplikacji \\
 \end{itemize}
 
-Jednak ta technologia ma swoje wady np:
+Jednak ta technologia ma swoje \textbf{wady} np:
 
 \begin{itemize}
-	\item wymaga stałego dostępu do Internetu, często o dużej przepustowości
+	\item wymaga \textbf{stałego dostępu do Internetu}, często o dużej przepustowości
 	\item niektóre przedsiębiorstwa mogą być niechętne umieszczaniu krytycznych danych w chmurze z powodu obawy o bezpieczeństwo danych
 	\item nie nadaje się do aplikacji, które potrzebują danych do analizy w czasie rzeczywistym, ponieważ trzeba wysłać dane z węzła aż do chmury co generuje opóźnienia \\
 \end{itemize}
 
 \subsubsection{Fog}
 
-W mgle obliczeniowej przetwarzanie danych odbywa się na urządzeniach, które znajdują się na krawędzi sieci. Do urządzeń brzegowych należą routery, switche, access pointy wifi,  set-top-boksy, stacje bazowe itd. Urządzenia te nie są już używane wyłącznie do przesyłania danych, lecz posiadają znaczne możliwości obliczeniowe oraz pamięć masową. \\
+W mgle obliczeniowej przetwarzanie danych odbywa się na urządzeniach, które znajdują się na krawędzi sieci. Do urządzeń brzegowych należą \textbf{routery, switche, access pointy wifi,  set-top-boksy, stacje bazowe} itd. Urządzenia te nie są już używane wyłącznie do przesyłania danych, lecz posiadają znaczne możliwości obliczeniowe oraz pamięć masową. \\
 
 Zadania obliczeniowe, które w przeciwnym razie musiałby zostać przesłane do jakiejś chmury mogą zostać zrealizowane lokalnie, minimalizuje to czas przetwarzania, a co jest szczególnie ważne dla aplikacji, które muszą działać w czasie rzeczywistym. \\
 
 Architektura mgły obliczeniowa może być scentralizowana lub rozproszona lub być kombinacją obu. W architekturze scentralizowanej każdy węzeł działa pod węzłem centralnym, zarządzanie taką siecią jest łatwe, ale gdy liczba podłączonych urządzeń wzrasta to staje się to wyzwaniem. W rozproszonej architekturze urządzenia współdziałają w sposób peer-to-peer.. Obciążenia obliczeniowe są rozproszone pomiędzy urządzeniami,. Każdy z węzłów mgły komunikuje się z innymi np. w celu podziału pracy. \\
 
-Można wyróżnić 3 rodzaje komunikacji:
+Można wyróżnić 3 \textbf{rodzaje komunikacji}:
 
 \begin{itemize}
 	\item \textbf{Machine-to-machine} - dane generowane przez jedno urząðzenie są konsumowane przez inne urządzenia
@@ -83,11 +83,11 @@ Obsługa komunikacji wymaga często większość mocy obliczeniowej mikrokontrol
 Przetwarzanie danych na urządzeniu brzegowym obejmuje często takie rzeczy jak:
 
 \begin{itemize}
-	\item Normalizacja lub przekształcenie danych do jednolitego formatu, zapewniając, że format ten jest zgodny z aplikacją.
-	\item Dane “opakowaniowe” w sposób, który jest bezpieczny i łączy dane w “praktyczną partię”.
-	\item Walidacja danych w celu zapewnienia ich zgodności z szeregiem ustalonych reguł.
-	\item Sortowanie danych w celu utworzenia preferowanej sekwencji
+	\item \textbf{Normalizacja} lub \textbf{przekształcenie danych do jednolitego formatu}, zapewniając, że format ten jest zgodny z aplikacją.
+	\item Dane “\textbf{opakowaniowe}” w sposób, który jest bezpieczny i łączy dane w “praktyczną partię”.
+	\item \textbf{Walidacja danych} w celu zapewnienia ich zgodności z szeregiem ustalonych reguł.
+	\item \textbf{Sortowanie danych} w celu utworzenia preferowanej sekwencji
 	\item “Podsumowywanie/kompresowanie danych” w celu zmniejszenia objętości i wyeliminowania niepotrzebnych lub niepożądanych szczegółów.
 	\item Filtrowanie powtarzających się, nieaktualnych lub niepożądanych danych w celu zwiększenia ich dokładności.
-	\item Wzbogacanie danych za pomocą dodatkowych powiązanych informacji (metadata)
+	\item Wzbogacanie danych za pomocą dodatkowych powiązanych informacji (\textbf{metadata})
 \end{itemize}
